@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import random
-num = random.randint(-100, 100)
+num = random.randint(-10, 10)
 if num > 0:
-    print(f"{num:d} is posetive")
+    print(f"{num:d} is positive")
 elif num == 0:
     print(f"{num:d} is zero")
 else:
