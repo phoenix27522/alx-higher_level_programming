@@ -3,5 +3,3 @@
 def print_list_integer(my_list=[]):
     for l in range(len(my_list)):
         print("{:d}".format(l))
-
-
