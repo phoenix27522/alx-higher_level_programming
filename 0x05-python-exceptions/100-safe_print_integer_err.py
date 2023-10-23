@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys  # To access stderr
 
 def safe_print_integer_err(value):
