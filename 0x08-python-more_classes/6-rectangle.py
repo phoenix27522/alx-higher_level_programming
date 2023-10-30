@@ -24,6 +24,7 @@ class Rectangle:
         elif height < 0:
             raise ValueError("height must be >= 0")
 
+        type(self).number_of_instances += 1
         self.__width = width
         self.__height = height
 
@@ -87,5 +88,5 @@ class Rectangle:
 
     def __del__(self):
         """ prints somthing when instance is deleted """
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
