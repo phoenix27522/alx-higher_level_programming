@@ -16,6 +16,7 @@ def load_from_json_file(filename):
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
+
 if __name__ == '__main__':
     data = load_from_json_file("add_item.json")
     data.extend(sys.argv[1:])
