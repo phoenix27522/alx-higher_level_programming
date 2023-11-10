@@ -93,6 +93,18 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
 
+    def update(self, *args, **kwargs):
+        """Assigns key/value arguments to attributes."""
+        if args:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attrs):
+                    setattr(self, attrs[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
     def __str__(self):
         """ returns in string format """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
