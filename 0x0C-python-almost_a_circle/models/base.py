@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 """Defines a base model class."""
 
 
@@ -17,3 +18,19 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file."""
+        if list_objs is None:
+            list_objs = []
+
+        file_name = f"{cls.__name__}.json"
+        with open (file_name, 'w') as file:
+            json_list = [obj.to_dictionary() for obj in list_objs]
+            file.write(cls.to_json_string(json_list))
+
+    @staticmethod
+    def to_json_string(list_dict):
+        """Converts a list of dictionaries to a JSON string."""
+        return json.dumps(list_dict)
