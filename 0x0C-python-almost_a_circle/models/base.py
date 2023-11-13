@@ -28,7 +28,7 @@ class Base:
             list_objs = []
 
         file_name = f"{cls.__name__}.json"
-        with open (file_name, 'w') as file:
+        with open(file_name, 'w') as file:
             json_list = [obj.to_dictionary() for obj in list_objs]
             file.write(cls.to_json_string(json_list))
 
@@ -48,7 +48,8 @@ class Base:
         """Return a class instantied from a dictionary of attributes """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(dictionary.get('width', 1), dictionary.get('height', 1))
+                new = cls(dictionary.get('width', 1), dictionary.get(
+                    'height', 1))
             else:
                 new = cls(dictionary.get('size', 1))
             new.update(**dictionary)
