@@ -4,16 +4,16 @@
 """Defines unittests for models/rectangle.py.
 
 Unittest classes:
-    TestRectangle_instantiation
-    TestRectangle_width
-    TestRectangle_height
-    TestRectangle_x
-    TestRectangle_y
-    TestRectangle_order_of_initializ
-    TestRectangle_area
-    TestRectangle_update_args
-    TestRectangle_update_kwargs
-    TestRectangle_to_dictionary
+    TestRectangle_instantiation - line 25
+    TestRectangle_width - line 114
+    TestRectangle_height - line 190
+    TestRectangle_x - line 262
+    TestRectangle_y - line 334
+    TestRectangle_order_of_initialization - line 402
+    TestRectangle_area - line 430
+    TestRectangle_update_args - line 538
+    TestRectangle_update_kwargs - line 676
+    TestRectangle_to_dictionary - line 788
 """
 import io
 import sys
@@ -110,7 +110,8 @@ class TestRectangle_instantiation(unittest.TestCase):
         r.y = 10
         self.assertEqual(10, r.y)
 
-    class TestRectangle_width(unittest.TestCase):
+
+class TestRectangle_width(unittest.TestCase):
     """Unittests for testing initialization of Rectangle width attribute."""
 
     def test_None_width(self):
@@ -256,7 +257,9 @@ class TestRectangle_height(unittest.TestCase):
     def test_zero_height(self):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(1, 0)
-    class TestRectangle_x(unittest.TestCase):
+
+
+class TestRectangle_x(unittest.TestCase):
     """Unittests for testing initialization of Rectangle x attribute."""
 
     def test_None_x(self):
@@ -327,7 +330,7 @@ class TestRectangle_height(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Rectangle(5, 3, -1, 0)
 
-    class TestRectangle_y(unittest.TestCase):
+class TestRectangle_y(unittest.TestCase):
     """Unittests for testing initialization of Rectangle y attribute."""
 
     def test_None_y(self):
@@ -394,7 +397,8 @@ class TestRectangle_height(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(3, 5, 0, -1)
 
-    class TestRectangle_order_of_initialization(unittest.TestCase):
+
+class TestRectangle_order_of_initialization(unittest.TestCase):
     """Unittests for testing Rectangle order of attribute initialization."""
 
     def test_width_before_height(self):

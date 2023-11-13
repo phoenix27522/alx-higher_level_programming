@@ -21,6 +21,7 @@ import unittest
 from models.base import Base
 from models.square import Square
 
+
 class TestSquare_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Square class."""
 
@@ -300,9 +301,9 @@ class TestSquare_y(unittest.TestCase):
     def test_negative_y(self):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(3, 0, -1)
-    
 
-    class TestSquare_order_of_initialization(unittest.TestCase):
+
+class TestSquare_order_of_initialization(unittest.TestCase):
     """Unittests for testing order of Square attribute initialization."""
 
     def test_size_before_x(self):
@@ -452,7 +453,7 @@ class TestSquare_update_args(unittest.TestCase):
 
     def test_update_args_more_than_four(self):
         s = Square(10, 10, 10, 10)
-        s.update(89, 2, 3, 4, 5)
+        s.update(89, 2, 3, 4)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
     def test_update_args_width_setter(self):
