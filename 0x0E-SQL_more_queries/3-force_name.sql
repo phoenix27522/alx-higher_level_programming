@@ -1,6 +1,3 @@
--- Replace 'your_database_name' with your actual database name
-USE your_database_name;
-
 -- Check if the table exists first
 SELECT COUNT(*)
 FROM information_schema.tables
