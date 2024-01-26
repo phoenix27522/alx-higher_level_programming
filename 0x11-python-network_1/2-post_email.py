@@ -8,6 +8,7 @@ import sys
 import urllib.parse
 import urllib.request
 
+
 def send_post_request(url, email):
     # Prepare data for the POST request
     data = urllib.parse.urlencode({"email": email}).encode("ascii")
@@ -19,6 +20,7 @@ def send_post_request(url, email):
     with urllib.request.urlopen(request) as response:
         # Print the body of the response
         print(response.read().decode("utf-8"))
+
 
 if __name__ == "__main__":
     # Check if the correct number of command-line arguments is provided
